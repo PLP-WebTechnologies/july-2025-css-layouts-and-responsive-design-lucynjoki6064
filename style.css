@@ -1,0 +1,97 @@
+/* Base styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Grid layout for the page */
+body {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+    grid-template-columns: 1fr;
+}
+
+/* Sections styling */
+header, nav, main, footer {
+    padding: 1rem;
+}
+
+header {
+    background: #333;
+    color: white;
+    grid-area: header;
+}
+
+nav {
+    background: #555;
+    grid-area: nav;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Flexbox here */
+    gap: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 1rem;
+    grid-area: main;
+}
+
+.content {
+    background: #f4f4f4;
+    padding: 1rem;
+}
+
+aside {
+    background: #ddd;
+    padding: 1rem;
+}
+
+/* Flexbox for cards */
+.card-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 1rem;
+    flex: 1 1 200px;
+    border: 1px solid #ccc;
+}
+
+/* Footer styling */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    grid-area: footer;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+    }
+}
